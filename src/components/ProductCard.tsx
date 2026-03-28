@@ -14,21 +14,31 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       margin: '8px',
       maxWidth: '300px'
     }}>
-      <img 
-        src={product.imageUrl} 
-        alt={product.name}
-        style={{ 
-          width: '100%', 
-          height: '200px', 
-          objectFit: 'cover',
-          objectPosition: 'center',
-          borderRadius: '4px',
-          backgroundColor: '#f8f9fa'
-        }}
-        onError={(e) => {
-          e.currentTarget.src = 'https://via.placeholder.com/300x200/cccccc/666666?text=No+Image';
-        }}
-      />
+      <div style={{ 
+        width: '100%', 
+        height: '200px', 
+        overflow: 'hidden',
+        borderRadius: '4px',
+        backgroundColor: '#f8f9fa',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <img 
+          src={product.imageUrl} 
+          alt={product.name}
+          style={{ 
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            objectPosition: 'center'
+          }}
+          onError={(e) => {
+            e.currentTarget.src = 'https://via.placeholder.com/300x200/cccccc/666666?text=No+Image';
+            e.currentTarget.style.objectFit = 'cover';
+          }}
+        />
+      </div>
       <h3 style={{ margin: '8px 0', color: '#333' }}>{product.name}</h3>
       <p style={{ margin: '4px 0', color: '#666' }}>
         <strong>Marca:</strong> {product.brand}
