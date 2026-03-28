@@ -23,6 +23,9 @@ const App: React.FC = () => {
           <p className="footer-text">
             © 2024 E-Commerce Lite. Todos los derechos reservados.
           </p>
+          <p className="footer-text" style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>
+            Desarrollado por Jhon Stiven Zuluaga Jaramillo
+          </p>
         </div>
       </footer>
     </div>
