@@ -1,46 +1,138 @@
-# Getting Started with Create React App
+# E-Commerce Lite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto React con TypeScript para demostrar un e-commerce básico con tipado estricto y componentes reutilizables.
 
-## Available Scripts
+## Objetivo
 
-In the project directory, you can run:
+Como desarrollador frontend, crear un proyecto React con TypeScript y definir interfaces de productos y usuarios, para estructurar los datos de un e-commerce y asegurar un tipado estricto, reutilizable y escalable.
 
-### `npm start`
+## Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ✅ React 19.2.4 con TypeScript 4.9.5
+- ✅ Interfaces tipadas para Product y User
+- ✅ Mock data con 15 productos y 5 usuarios
+- ✅ Componentes reutilizables con props tipadas
+- ✅ Diseño responsive y premium
+- ✅ Sin dependencias innecesarias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Estructura del Proyecto
 
-### `npm test`
+```
+src/
+├── components/          # Componentes React
+│   ├── ProductCard.tsx # Tarjeta de producto
+│   ├── UserCard.tsx    # Tarjeta de usuario
+│   └── ProductList.tsx # Listado principal
+├── interfaces/          # Definiciones TypeScript
+│   └── types.ts        # Interfaces Product, User
+├── data/               # Datos mock
+│   └── data.ts         # 15 productos, 5 usuarios
+├── App.tsx             # Componente principal
+├── App.css             # Estilos premium
+└── index.tsx           # Punto de entrada
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación y Ejecución
 
-### `npm run build`
+### Prerrequisitos
+- Node.js 16+
+- npm o yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pasos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/mordeworti-lang/users_stories_TS.git
+   cd users_stories_TS/ecommerce-lite
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Iniciar aplicación**
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Abrir en navegador**
+   Visita [http://localhost:3000](http://localhost:3000)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Scripts Disponibles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `npm start` - Modo desarrollo
+- `npm run build` - Build para producción
+- `npm test` - Ejecutar tests (si se agregan)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Interfaces Definidas
 
-## Learn More
+### Product
+```typescript
+interface Product {
+  readonly sku: PropertyKey;
+  name: string;
+  brand: string;
+  quantity: number;
+  price: number;
+  isActive: Status;
+  category: ProductCategory;
+  imageUrl: string;
+  description?: string;
+  dimensions?: string;
+  tags?: ProductTags;
+  createdAt: Date;
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### User
+```typescript
+interface User {
+  readonly id: PropertyKey;
+  fullName: string;
+  email: string;
+  isActive: Status;
+  role: UserRole;
+  address: string;
+  createdAt: Date;
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Datos de Ejemplo
+
+### Productos (15)
+- **5 Muscle Cars**: Mustang, Challenger, Camaro, Shelby, Pontiac
+- **5 Motos Harley**: Street Glide, Fat Boy, Sportster, Road King, Iron 883
+- **5 Libros**: Cien Años de Soledad, El Quijote, 1984, Meridiano de Medianoche, Sangre de Campeon
+
+### Usuarios (5)
+- **4 Usuarios regulares** con diferentes estados
+- **1 Administrador** con permisos elevados
+
+## Tecnologías
+
+- **React 19.2.4** - Librería frontend
+- **TypeScript 4.9.5** - Tipado estático
+- **CSS Grid/Flexbox** - Layout responsive
+- **CSS Variables** - Diseño consistente
+
+## Criterios de Aceptación Cumplidos
+
+- ✅ **CA_01**: Proyecto React con TypeScript creado
+- ✅ **CA_02**: Compila y arranca correctamente
+- ✅ **CA_03**: Estructura de carpetas configurada
+- ✅ **CA_04**: Interface Product con atributos obligatorios
+- ✅ **CA_05**: Interface User con atributos obligatorios
+- ✅ **CA_06**: Propiedades opcionales incluidas
+- ✅ **CA_07**: 15 productos y 5 usuarios creados
+- ✅ **CA_08**: Listado con .map() implementado
+- ✅ **CA_09**: Nombre, precio, categoría e imagen renderizados
+- ✅ **CA_10**: Props tipadas estrictamente
+
+## Contribución
+
+Desarrollado por Jhon Stiven Zuluaga Jaramillo
+
+## Licencia
+
+ 2024 E-Commerce Lite. Todos los derechos reservados.
