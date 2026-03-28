@@ -5,7 +5,7 @@ import UserCard from './UserCard';
 
 const ProductList: React.FC = () => {
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
+    <div style={{ padding: '20px 0' }}>
       <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px' }}>
         Lista de Productos
       </h1>
