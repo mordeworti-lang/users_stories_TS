@@ -5,9 +5,9 @@ import UserCard from './UserCard';
 
 const ProductList: React.FC = () => {
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: '20px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
       <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px' }}>
-        🛍️ Lista de Productos
+        Lista de Productos
       </h1>
       
       <div style={{ 
@@ -22,7 +22,7 @@ const ProductList: React.FC = () => {
       </div>
 
       <h1 style={{ textAlign: 'center', color: '#2c3e50', marginBottom: '30px' }}>
-        👥 Lista de Usuarios
+        Lista de Usuarios
       </h1>
       
       <div style={{ 

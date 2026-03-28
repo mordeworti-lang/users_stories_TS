@@ -12,7 +12,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       borderRadius: '8px', 
       padding: '16px', 
       margin: '8px',
-      maxWidth: '300px'
+      maxWidth: '300px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
       <div style={{ 
         width: '100%', 
@@ -22,34 +23,39 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         backgroundColor: '#f8f9fa',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        position: 'relative'
       }}>
         <img 
           src={product.imageUrl} 
           alt={product.name}
           style={{ 
-            width: '100%',
-            height: '100%',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: 'auto',
+            height: 'auto',
             objectFit: 'contain',
             objectPosition: 'center'
           }}
           onError={(e) => {
             e.currentTarget.src = 'https://via.placeholder.com/300x200/cccccc/666666?text=No+Image';
+            e.currentTarget.style.width = '100%';
+            e.currentTarget.style.height = '100%';
             e.currentTarget.style.objectFit = 'cover';
           }}
         />
       </div>
-      <h3 style={{ margin: '8px 0', color: '#333' }}>{product.name}</h3>
-      <p style={{ margin: '4px 0', color: '#666' }}>
+      <h3 style={{ margin: '8px 0', color: '#333', fontSize: '1.1em' }}>{product.name}</h3>
+      <p style={{ margin: '4px 0', color: '#666', fontSize: '0.9em' }}>
         <strong>Marca:</strong> {product.brand}
       </p>
-      <p style={{ margin: '4px 0', color: '#666' }}>
+      <p style={{ margin: '4px 0', color: '#666', fontSize: '0.9em' }}>
         <strong>Categoría:</strong> {product.category}
       </p>
       <p style={{ margin: '4px 0', fontSize: '1.2em', fontWeight: 'bold', color: '#2c3e50' }}>
         ${product.price.toLocaleString()}
       </p>
-      <p style={{ margin: '4px 0', color: '#27ae60' }}>
+      <p style={{ margin: '4px 0', color: '#27ae60', fontSize: '0.9em' }}>
         <strong>Stock:</strong> {product.quantity} unidades
       </p>
       <p style={{ 
@@ -58,9 +64,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         borderRadius: '12px', 
         fontSize: '0.8em',
         backgroundColor: product.isActive === 'active' ? '#d4edda' : '#f8d7da',
-        color: product.isActive === 'active' ? '#155724' : '#721c24'
+        color: product.isActive === 'active' ? '#155724' : '#721c24',
+        display: 'inline-block'
       }}>
-        {product.isActive === 'active' ? '✅ Activo' : '❌ Inactivo'}
+        {product.isActive === 'active' ? 'Activo' : 'Inactivo'}
       </p>
       {product.tags && (
         <div style={{ margin: '8px 0' }}>
