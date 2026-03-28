@@ -1,6 +1,6 @@
 
 export type UserRole = "admin" | "user";
-export type ProductCategory = "electronics" | "clothing" | "books" | "home" | "sports";
+export type ProductCategory = "electronics" | "books" | "sports";
 export type Status = "active" | "inactive";
 export type ProductTags = string[];
 
@@ -28,14 +28,3 @@ export interface User {
     address : string ;
     createdAt: Date;
 }
-
-export interface CartItem {
-    readonly id : User["id"];
-    product: Product["sku"];
-    quantity: number;
-    userRole?: UserRole;  // Restricción de rol para acceso al carrito
-}
-
-export const cartItemsMap = new Map<CartItem["id"], CartItem>();
-export const usersMap = new Map<User["id"], User>();
-export const productsMap = new Map<Product["sku"], Product>();
